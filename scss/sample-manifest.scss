@@ -1,0 +1,17 @@
+// Base Folder
+@import 'base/colors';
+@import 'base/mixins';
+@import 'base/variables';
+@import 'base/functions';
+
+// Includes
+@import 'includes/nav';
+@import 'includes/sidebar';
+@import 'includes/footer';
+
+// Modules
+@import 'modules/popup';
+@import 'modules/sign-up-form';
+
+// Sample nested directories
+@import 'dir1/dir2/file';

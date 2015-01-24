@@ -1,0 +1,6 @@
+[
+	{
+		"caption": "Sass Director: Generate Sass from Manifest File",
+		"command": "sass_director_generate"
+	}
+]
