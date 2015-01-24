@@ -4,16 +4,14 @@ import sublime
 import platform
 import sublime_plugin
 
-watch_threads = []
 
 class SassDirectorBase(sublime_plugin.WindowCommand):
-    fileExt = ""
     root_path = ""
     manifest_path = ""
     manifest_file = ""
     strip_list = [';', '@import', '\'', '\"']
 
-    def _buildPaths(self):
+    def buildPaths(self):
         """
         @function: buildPaths
         @description: Defines the Root Path and Files/Directories in the Root
@@ -24,9 +22,6 @@ class SassDirectorBase(sublime_plugin.WindowCommand):
         self.root_path = folders[0]
         self.manifest_file = view.file_name()
 
-        self.fileExt = \
-            '.scss' if view.file_name().rfind(".scss") >= 0 else '.sass'
-
         if(platform.system() is "Windows"):
             self.manifest_path = \
                 self.manifest_file[:self.manifest_file.rfind('\\')]
@@ -34,7 +29,7 @@ class SassDirectorBase(sublime_plugin.WindowCommand):
             self.manifest_path = \
                 self.manifest_file[:self.manifest_file.rfind('/')]
 
-    def _stripImport(self, line):
+    def stripImport(self, line):
         """
         @function: pruneImport
         @parameters: line: {str}
@@ -45,7 +40,7 @@ class SassDirectorBase(sublime_plugin.WindowCommand):
         return line.strip()
 
     @staticmethod
-    def _expandImports(imports):
+    def expandImports(imports):
         """
         @function: expandImports
         @parameters: imports: {List}
@@ -59,7 +54,7 @@ class SassDirectorBase(sublime_plugin.WindowCommand):
             paths.append(path)
         return paths
 
-    def _generateDirectories(self, dirs, view):
+    def generateDirectories(self, dirs, view):
         # Each entry is a directory structure
         print(dirs)
         for d in dirs:
@@ -78,12 +73,12 @@ class SassDirectorBase(sublime_plugin.WindowCommand):
             os.chdir(self.manifest_path)
             [os.chdir(directory) for directory in d]
             # Change to associated directory
-            f = open(file_name + self.fileExt, 'w')
-            print("Wrote new scss file:", file_name + self.fileExt)
+            f = open(file_name + '.scss', 'w')
+            print("Wrote new scss file:", file_name)
             f.close()
 
     def generateSassFromManifest(self):
-        self._buildPaths()
+        self.buildPaths()
 
         view = self.window.active_view()
         body = view.substr(sublime.Region(0, view.size()))
@@ -93,9 +88,9 @@ class SassDirectorBase(sublime_plugin.WindowCommand):
         # Grab Import Lines
         for line in lines:
             if re.match('^@import', line):
-                imports.append(self._stripImport(line))
-        dirs = self._expandImports(imports)
-        self._generateDirectories(dirs, view)
+                imports.append(self.stripImport(line))
+        dirs = self.expandImports(imports)
+        self.generateDirectories(dirs, view)
         print("Done! Refreshing folder list...")
         view.run_command('refresh_folder_list')
 
@@ -108,37 +103,6 @@ class SassDirectorGenerateCommand(SassDirectorBase):
     def run(self):
         self.generateSassFromManifest()
 
-
-class SassDirectorKillWatchCommand(SassDirectorBase):
-    def run
-
-
-class SassDirectorWatchCommand(SassDirectorBase):
-    def run(self):
-        '''
-        #####################################################################
-        # In order to watch the files via the manifest,
-          we need to perform the following:
-
-          >> Ask the user to select folder for CSS export
-
-          1. Import the Subprocess module
-          2. Begin a new shell (automatically selects native shell)
-          3. Navigate to the directory containing this file
-          4. Execute 'sass -w manifest.scss:{End Folder}
-          5. Save the running process to the global watch_threads array as:
-             { "shell": p, "filename": "{{ manifest_file_name }}" }
-
-          - Continue until user executes KillWatch command
-
-        ######################################################################
-        '''
-        # Perform OS check for Bash vs. Cmd commands to execute
-        sh = subprocess.Popen(
-            "dir",
-            shell=True,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.STDOUT)
 
 # ================================================
 # ================================================

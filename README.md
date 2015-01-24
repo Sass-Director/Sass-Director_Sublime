@@ -1,8 +1,5 @@
-# Sass-Director for Sublime
-
+# sass-director-sublime
 A port of Sass Director for Sublime
-
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Stephn-R/sass-director-sublime?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Please visit the original Web Project by Una Kravet [HERE](https://github.com/una/sass-director)!
 
@@ -38,6 +35,6 @@ Alternatively, you can clone the repository directly from GitHub into your Packa
 
 ## Future work
 
-If any issues do appear, do not hesitate to report them under our [Issues](https://github.com/Stephn-R/sass-director-sublime/issues)
+This Project was built upon ST3. Therefore, I have not validated with ST2 yet. If any issues do appear, do not hesitate to report them under our [Issues](https://github.com/Stephn-R/sass-director-sublime/issues)
 
 ##### And as always ~~ Happy Hacking!
