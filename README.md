@@ -1,7 +1,8 @@
-# sass-director-sublime
+# Sass-Director for Sublime
+
 A port of Sass Director for Sublime
 
-Please visit the original Web Project by Una Kravet [HERE](https://github.com/una/sass-director)!
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Stephn-R/sass-director-sublime?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## Installation
 
@@ -28,13 +29,14 @@ Alternatively, you can clone the repository directly from GitHub into your Packa
 [Example Manifest File](https://github.com/Stephn-R/sass-director-sublime/blob/master/scss/sample-manifest.scss)
 
 1. Open up your manifest file
-2. Open the Command Palette and select "Sass Director: Generate Sass from Manifest File"
+2. Open the Command Palette and select '''Sass Director: Generate Sass from Manifest File'''
 3. The Plugin will generate the directories and files relative to your Manifest File
 4. ...
 5. PROFIT!
 
-## Future work
+## Other Features
 
-This Project was built upon ST3. Therefore, I have not validated with ST2 yet. If any issues do appear, do not hesitate to report them under our [Issues](https://github.com/Stephn-R/sass-director-sublime/issues)
+1. Saving Manifest Files
+2. Starting new manifest files from a saved copy
 
-##### And as always ~~ Happy Hacking!
+Please visit the original Web Project by Una Kravet [HERE](https://github.com/una/sass-director)!
