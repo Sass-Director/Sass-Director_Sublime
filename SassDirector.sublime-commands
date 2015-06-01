@@ -2,5 +2,13 @@
 	{
 		"caption": "Sass Director: Generate Sass from Manifest File",
 		"command": "sass_director_generate"
+	},
+	{
+		"caption": "Sass Director: Save Manifest File",
+		"command": "sass_director_save_manifest"
+	},
+	{
+		"caption": "Sass Director: New Manifest File from Saved",
+		"command": "sass_director_open_manifest"
 	}
 ]
