@@ -2,7 +2,7 @@
 
 [![GitHub issues](https://img.shields.io/github/issues/Sass-Director/Sass-Director_Sublime.svg)](https://github.com/Sass-Director/Sass-Director_Sublime/issues) [![GitHub forks](https://img.shields.io/github/forks/Sass-Director/Sass-Director_Sublime.svg)](https://github.com/Sass-Director/Sass-Director_Sublime/network) [![GitHub stars](https://img.shields.io/github/stars/Sass-Director/Sass-Director_Sublime.svg)](https://github.com/Sass-Director/Sass-Director_Sublime/stargazers) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/Sass-Director/Sass-Director_Sublime/master/LICENSE)
 
-A port of Sass Director for Sublime
+A powerful plugin for managing Sass projects in Sublime
 
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Stephn-R/sass-director-sublime?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
