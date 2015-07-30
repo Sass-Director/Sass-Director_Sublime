@@ -9,6 +9,7 @@ import sublime_plugin
 # ====================================================== #
 # ====================================================== #
 
+
 def test_valid_file(view):
     pattern = re.compile('\.(scss|sass)$')
     print(pattern.search(view.file_name()))
