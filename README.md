@@ -28,7 +28,7 @@ Alternatively, you can clone the repository directly from GitHub into your Packa
 
 ## Usage
 
-[Example Manifest File](https://github.com/Stephn-R/sass-director-sublime/blob/master/scss/sample-manifest.scss)
+[Example Manifest File](https://github.com/Sass-Director/Sass-Director_Sublime/blob/master/tests/main.scss)
 
 1. Open up your manifest file
 2. Open the Command Palette and select '''Sass Director: Generate Sass from Manifest File'''
